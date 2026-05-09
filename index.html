@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>21 Things I Love About You 💗</title>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffc0cb, #ffb6d9);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    h1 {
+      color: white;
+      font-size: 52px;
+      margin-top: 18px;
+      text-shadow: 3px 3px 10px hotpink;
+      position: relative;
+      z-index: 3;
+    }
+
+    #centrePhoto {
+      position: absolute;
+      top: 31%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 290px;
+      background: white;
+      padding: 15px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.25);
+      z-index: 1;
+    }
+
+    #centrePhoto img {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    #centrePhoto p {
+      color: #ff1493;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      background: hotpink;
+      transform: rotate(45deg);
+      animation: float 3s ease-in-out infinite;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      background: inherit;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -26px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -26px;
+      top: 0;
+    }
+
+    .heart1 { top: 16%; left: 7%; background: #ff69b4; }
+    .heart2 { top: 16%; left: 20%; background: #ff1493; }
+    .heart3 { top: 16%; left: 33%; background: #ff85c1; }
+    .heart4 { top: 16%; left: 58%; background: #ff5fa2; }
+    .heart5 { top: 16%; left: 71%; background: #ff4fa3; }
+    .heart6 { top: 16%; left: 84%; background: #ff8fcf; }
+
+    .heart7 { top: 34%; left: 5%; background: #ff5cad; }
+    .heart8 { top: 34%; left: 18%; background: #ff9ed6; }
+    .heart9 { top: 34%; left: 31%; background: #ff6bbf; }
+    .heart10 { top: 34%; left: 64%; background: #ffaadf; }
+    .heart11 { top: 34%; left: 77%; background: #ff66c4; }
+    .heart12 { top: 34%; left: 90%; background: #ff80cf; }
+
+    .heart13 { top: 53%; left: 5%; background: #ff4fa3; }
+    .heart14 { top: 53%; left: 18%; background: #ff94d6; }
+    .heart15 { top: 53%; left: 31%; background: #ff5ca8; }
+    .heart16 { top: 53%; left: 64%; background: #ff73bf; }
+    .heart17 { top: 53%; left: 77%; background: #ff99d9; }
+    .heart18 { top: 53%; left: 90%; background: #ff3f9d; }
+
+    .heart19 { top: 78%; left: 18%; background: #ff6fb9; }
+    .heart20 { top: 78%; left: 48%; background: #ff85cc; }
+    .heart21 { top: 78%; left: 78%; background: #ff4f9e; }
+
+    @keyframes float {
+      0% {
+        transform: rotate(45deg) translateY(0px);
+      }
+
+      50% {
+        transform: rotate(45deg) translateY(-14px);
+      }
+
+      100% {
+        transform: rotate(45deg) translateY(0px);
+      }
+    }
+
+    .number {
+      position: absolute;
+      color: white;
+      font-size: 22px;
+      font-family: cursive;
+      font-weight: bold;
+      z-index: 3;
+      text-shadow: 2px 2px 10px hotpink;
+      pointer-events: none;
+    }
+
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.6);
+
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 999;
+    }
+
+    #card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      width: 350px;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    }
+
+    #popupImage {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    #popupMessage {
+      font-size: 20px;
+      margin-top: 15px;
+      color: #ff1493;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: hotpink;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: deeppink;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>21 Things I Love About You 💗</h1>
+
+  <div id="centrePhoto">
+    <img src="centre.jpeg" alt="Centre photo">
+    <p>One for every year you have been my mom 💕</p>
+  </div>
+
+  <div class="number" style="top:11%; left:6%;">1</div>
+  <div class="heart heart1" onclick="openPopup(0)"></div>
+
+  <div class="number" style="top:11%; left:19%;">2</div>
+  <div class="heart heart2" onclick="openPopup(1)"></div>
+
+  <div class="number" style="top:11%; left:32%;">3</div>
+  <div class="heart heart3" onclick="openPopup(2)"></div>
+
+  <div class="number" style="top:11%; left:57%;">4</div>
+  <div class="heart heart4" onclick="openPopup(3)"></div>
+
+  <div class="number" style="top:11%; left:70%;">5</div>
+  <div class="heart heart5" onclick="openPopup(4)"></div>
+
+  <div class="number" style="top:11%; left:83%;">6</div>
+  <div class="heart heart6" onclick="openPopup(5)"></div>
+
+  <div class="number" style="top:29%; left:4%;">7</div>
+  <div class="heart heart7" onclick="openPopup(6)"></div>
+
+  <div class="number" style="top:29%; left:17%;">8</div>
+  <div class="heart heart8" onclick="openPopup(7)"></div>
+
+  <div class="number" style="top:29%; left:30%;">9</div>
+  <div class="heart heart9" onclick="openPopup(8)"></div>
+
+  <div class="number" style="top:29%; left:62%;">10</div>
+  <div class="heart heart10" onclick="openPopup(9)"></div>
+
+  <div class="number" style="top:29%; left:75%;">11</div>
+  <div class="heart heart11" onclick="openPopup(10)"></div>
+
+  <div class="number" style="top:29%; left:88%;">12</div>
+  <div class="heart heart12" onclick="openPopup(11)"></div>
+
+  <div class="number" style="top:48%; left:3%;">13</div>
+  <div class="heart heart13" onclick="openPopup(12)"></div>
+
+  <div class="number" style="top:48%; left:16%;">14</div>
+  <div class="heart heart14" onclick="openPopup(13)"></div>
+
+  <div class="number" style="top:48%; left:29%;">15</div>
+  <div class="heart heart15" onclick="openPopup(14)"></div>
+
+  <div class="number" style="top:48%; left:62%;">16</div>
+  <div class="heart heart16" onclick="openPopup(15)"></div>
+
+  <div class="number" style="top:48%; left:75%;">17</div>
+  <div class="heart heart17" onclick="openPopup(16)"></div>
+
+  <div class="number" style="top:48%; left:88%;">18</div>
+  <div class="heart heart18" onclick="openPopup(17)"></div>
+
+  <div class="number" style="top:73%; left:16%;">19</div>
+  <div class="heart heart19" onclick="openPopup(18)"></div>
+
+  <div class="number" style="top:73%; left:46%;">20</div>
+  <div class="heart heart20" onclick="openPopup(19)"></div>
+
+  <div class="number" style="top:73%; left:76%;">21</div>
+  <div class="heart heart21" onclick="openPopup(20)"></div>
+
+  <div id="popup">
+    <div id="card">
+      <img id="popupImage" src="tushibaby1.jpeg">
+
+      <p id="popupMessage">
+        Hey Mum! It is me, your second favourite child 💗
+      </p>
+
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    let memories = [
+      {
+        image: "tushibaby1.jpeg",
+        message: "Hey Mum! It is me, your second favourite child hehehe 💗"
+      },
+      {
+        image: "IMG_8498.jpeg",
+        message: "Thank you for always being there for me no matter what 💕"
+      },
+      {
+        image: "prettiestmom.jpeg",
+        message: "You are the prettiest, strongest and funniest mum ever 🌸"
+      },
+      {
+        image: "looks.jpeg",
+        message: "Even your scary looks are cute 💗"
+      },
+      {
+        image: "IMG_9950.jpeg",
+        message: "I love when you fall asleep on trains and look so cute 🥹"
+      },
+      {
+        image: "IMG_5657.jpeg",
+        message: "I love when we go out and eat froyo together 💕"
+      },
+      {
+        image: "IMG_2009.jpeg",
+        message: "I love when you concentrate so hard to make sure everything you do is perfect."
+      },
+      {
+        image: "IMG_0185.jpeg",
+        message: "I love when you spend agesss getting ready, even if we are already late."
+      },
+      {
+        image: "IMG_1917.jpeg",
+        message: "I love when you appreciate the things we get you, no matter how big or small."
+      },
+      {
+        image: "IMG_5646.jpeg",
+        message: " I love that you're always smiling no matter what💕"
+      },
+      {
+        image: "IMG_1622.jpeg",
+        message: "I love how you make me laugh always."
+      },
+      {
+        image: "IMG_4086.jpeg",
+        message: "I love how you mess around with us and play along to our antics."
+      },
+      {
+        image: "IMG_9237.jpeg",
+        message: "I love how you always take care of our needs before your own."
+      },
+      {
+        image: "IMG_2058.jpeg",
+        message: "I love how you never say no to what we ask of you."
+      },
+      {
+        image: "IMG_9747.jpeg",
+        message: "I love that you always ask me How Do I look betu??."
+      },
+      {
+        image: "IMG_5648.jpeg",
+        message: "I love how pretty you look no matter what."
+      },
+      {
+        image: "IMG_5560.jpeg",
+        message: "I love how funny you are without even trying."
+      },
+      {
+        image: "IMG_4118.jpeg",
+        message: "I love our random conversations and gossip sessions."
+      },
+      {
+        image: "IMG_4089.jpeg",
+        message: "I love that I look exactly like you, beautiful and confident."
+      },
+      {
+        image: "IMG_3856.jpeg",
+        message: "I love how you never fail to take photos wherever we go."
+      },
+      {
+        image: "IMG_4125.jpeg",
+        message: "But most of all I love you Mom, for being the most amazing and perfect human being there is. Thank you for everything you have done and continue to do for us. You are not only my mother but my best friend, even if I am not yours. I love you so so much. Happy Mother's Day!!"
+      }
+    ];
+
+    function openPopup(number) {
+      document.getElementById("popupImage").src = memories[number].image;
+      document.getElementById("popupMessage").innerText = memories[number].message;
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
